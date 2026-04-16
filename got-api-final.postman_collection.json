@@ -1,0 +1,371 @@
+{
+  "info": {
+    "_postman_id": "ee95e182-ba59-48f5-a701-8275fe488b1a",
+    "name": "got-api-final",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54083138",
+    "_collection_link": "https://go.postman.co/collection/54083138-ee95e182-ba59-48f5-a701-8275fe488b1a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "LISTAR",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/characters/23",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "characters",
+            "23"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "REGISTRAR-USUARIO",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"username\": \"joao\", \"password\": \"senha123\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "LOGIN-USUARIO",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"username\": \"joao\", \"password\": \"senha123\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CRIAR-PERSONAGEM",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqb2FvIiwiaWF0IjoxNzc2Mzc3NTcxLCJleHAiOjE3NzY0NjM5NzF9.UtTY-cRzERPE7EcD6yFtxT0TxIpYoaIWCSoWBjkIA9s",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Theon Greyjoy\",\r\n  \"casa_id\": 5,\r\n  \"titulo\": \"Príncipe de Pyke\",\r\n  \"status\": \"morto\",\r\n  \"habilidades\": [\"combate\", \"navegação\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/characters",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "characters"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ATUALIZA-PERSONAGEM",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqb2FvIiwiaWF0IjoxNzc2Mzc3NTcxLCJleHAiOjE3NzY0NjM5NzF9.UtTY-cRzERPE7EcD6yFtxT0TxIpYoaIWCSoWBjkIA9s",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Theon Greyjoy\",\r\n  \"casa_id\": 5,\r\n  \"titulo\": \"Príncipe de Pyke\",\r\n  \"status\": \"desaparecido\",\r\n  \"habilidades\": [\"combate\", \"navegação\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/characters/23",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "characters",
+            "23"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "REMOVE-PERSONAGEM",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqb2FvIiwiaWF0IjoxNzc2Mzc3NTcxLCJleHAiOjE3NzY0NjM5NzF9.UtTY-cRzERPE7EcD6yFtxT0TxIpYoaIWCSoWBjkIA9s",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/characters/23",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "characters",
+            "23"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "LISTAR-CASAS",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/houses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "houses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "LISTAR-CASAS-ID",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/houses/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "houses",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CRIA-CASA",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqb2FvIiwiaWF0IjoxNzc2Mzc3NTcxLCJleHAiOjE3NzY0NjM5NzF9.UtTY-cRzERPE7EcD6yFtxT0TxIpYoaIWCSoWBjkIA9s",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Bolton\",\r\n  \"regiao\": \"Norte\",\r\n  \"lema\": \"Nosso Amanhecer Chega\",\r\n  \"sede\": \"Porto Cervo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/houses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "houses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ATUALIZA-CASA",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqb2FvIiwiaWF0IjoxNzc2Mzc3NTcxLCJleHAiOjE3NzY0NjM5NzF9.UtTY-cRzERPE7EcD6yFtxT0TxIpYoaIWCSoWBjkIA9s",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Bolton Falecidos\",\r\n  \"regiao\": \"Norte\",\r\n  \"lema\": \"Nosso Amanhecer Chega\",\r\n  \"sede\": \"Porto Cervo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/houses/11",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "houses",
+            "11"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "REMOVE-CASA",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqb2FvIiwiaWF0IjoxNzc2Mzc3NTcxLCJleHAiOjE3NzY0NjM5NzF9.UtTY-cRzERPE7EcD6yFtxT0TxIpYoaIWCSoWBjkIA9s",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Bolton Falecidos\",\r\n  \"regiao\": \"Norte\",\r\n  \"lema\": \"Nosso Amanhecer Chega\",\r\n  \"sede\": \"Porto Cervo\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/houses/11",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "houses",
+            "11"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
